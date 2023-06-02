@@ -1,7 +1,7 @@
 # [Nand to Tetris](https://www.coursera.org/learn/build-a-computer/home/welcome)
 The purpose of this course is to build a general-purpose computer(Hardware and Software) that can run any program.
 
-## Project 1: [Implementation of Elementary Logic Gates]
+## Project 1: [Implementation of Elementary Logic Gates](https://github.com/momed-0/nand2tetris/tree/main/Project%201)
 This project aims at building 15 elementary logic gates using a Hardware Description Language (HDL) in turn yielding a basic chip-set.
 The 15 logic gates are
 1) Xor
