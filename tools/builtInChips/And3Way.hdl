@@ -1,0 +1,17 @@
+//Author:Mohammed N
+//File name: And3Way.hdl
+
+/**
+*Computes the and of 3 bits
+*
+*/
+
+CHIP And3Way {
+	IN a,b,c;
+	OUT out;
+
+	PARTS:
+	//logic - a.b.c = out
+	And(a=a,b=b,out=and1);
+	And(a=and1,b=c,out=out);
+}
