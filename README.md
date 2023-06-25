@@ -5,4 +5,4 @@ This repository contains the projects and accompanying materials for the Nand2Te
 
 The projects in this repository follow the Nand2Tetris course structure, which consists of multiple projects, each building upon the previous one, leading to the creation of a complete computer system. Here's a brief description of each project:
 
-# [Project 01]([(https://github.com/momed-0/nand2tetris/tree/main/Project%201)https://github.com/momed-0/nand2tetris/tree/main/Project%201)] Boolean Logic and Gates
+# [Project 01] (https://github.com/momed-0/nand2tetris/tree/main/Project%201) Boo
