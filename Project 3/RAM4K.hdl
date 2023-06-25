@@ -1,0 +1,35 @@
+//Author:Mohammed N
+// File name: RAM4K.hdl
+
+/**
+ * Memory of 4K registers, each 16 bit-wide. Out holds the value
+ * stored at the memory location specified by address. If load==1, then 
+ * the in value is loaded into the memory location specified by address 
+ * (the loaded value will be emitted to out from the next time step onward).
+ */
+
+CHIP RAM4K {
+    IN in[16], load, address[12];
+    OUT out[16];
+
+    PARTS:
+        //Writing to RAM register using De-multiplexor for load value for each ram
+	
+	DMux8Way (in=load,sel=address[9..11],a=aload,b=bload,c=cload,d=dload,e=eload,f=fload,g=gload,h=hload);
+	
+	RAM512 (in=in,load=aload,address=address[0..8],out=aout);
+	RAM512 (in=in,load=bload,address=address[0..8],out=bout);
+	RAM512 (in=in,load=cload,address=address[0..8],out=cout);
+	RAM512 (in=in,load=dload,address=address[0..8],out=dout);
+	RAM512 (in=in,load=eload,address=address[0..8],out=eout);
+	RAM512 (in=in,load=fload,address=address[0..8],out=fout);
+	RAM512 (in=in,load=gload,address=address[0..8],out=gout);
+	RAM512 (in=in,load=hload,address=address[0..8],out=hout);
+
+	//Reading the RAM
+        //Since we have already know the value of the register in all the 64 RAM part
+        //We only need to output by selecting the RAM part ,ie by using address[9..11]
+
+        Mux8Way16(a=aout,b=bout,c=cout,d=dout,e=eout,f=fout,g=gout,h=hout,sel=address[9..11],out=out);
+
+}

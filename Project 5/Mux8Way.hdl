@@ -1,0 +1,27 @@
+//Author: Mohammed N
+// File name: Mux8Way.hdl
+
+/**
+ * 8-way multiplexor:
+ * out = a if sel == 000
+ *       b if sel == 001
+ *       etc.
+ *       h if sel == 111
+ */
+
+CHIP Mux8Way {
+    IN a, b, c, d,
+       e, f, g, h,
+       sel[3];
+    OUT out;
+
+    PARTS:
+    //logic- when sel[2] == 0 (a,b,c,d) is enable when sel[2] == 1 -- (efgh) is enabled
+    // Put your code here:
+    Mux (a=a,b=e,sel=sel[2],out=mux1);
+    Mux (a=b,b=f,sel=sel[2],out=mux2);
+    Mux (a=c,b=g,sel=sel[2],out=mux3);
+    Mux (a=d,b=h,sel=sel[2],out=mux4);
+    Mux4Way (a=mux1,b=mux2,c=mux3,d=mux4,sel=sel[0..1],out=out);
+    
+}

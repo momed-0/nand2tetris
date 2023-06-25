@@ -1,0 +1,23 @@
+//Author--Mohammed N
+// File name: Mux4Way.hdl
+
+/**
+ * 4-way multiplexor:
+ * out = a if sel == 00
+ *       b if sel == 01
+ *       c if sel == 10
+ *       d if sel == 11
+ */
+
+CHIP Mux4Way {
+    IN a, b, c, d, sel[2];
+    OUT out;
+
+    PARTS:
+    //logic -- Mux(a,c) with sel1 will produce a on sel1 == 0 and c on sel1==1
+    // similarly for Mux(b,d) again Mux of the output wil sel0 will give the desired chip
+    // Put your code here:
+    Mux (a=a,b=c,sel=sel[1],out=out1);
+    Mux (a=b,b=d,sel=sel[1],out=out2);
+    Mux (a=out1,b=out2,sel=sel[0],out=out);
+}

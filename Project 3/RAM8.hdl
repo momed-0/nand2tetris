@@ -1,0 +1,74 @@
+//Author: Mohammed N
+// File name: RAM8.hdl
+
+/**
+ * Memory of 8 registers, each 16 bit-wide. Out holds the value
+ * stored at the memory location specified by address. If load==1, then 
+ * the in value is loaded into the memory location specified by address 
+ * (the loaded value will be emitted to out from the next time step onward).
+ */
+
+CHIP RAM8 {
+    IN in[16], load, address[3];
+    OUT out[16];
+
+    PARTS:
+     
+    //WRITING THE INPUT
+
+    //DeMultiplexor for logic of load for each register
+
+    DMux8Way(in=load,sel=address,a=aload,b=bload,c=cload,d=dload,e=eload,f=fload,g=gload,h=hload);
+   
+    //Multiplexor is used to choose between the previous or new input based on load
+
+    //first register
+
+    Mux16(a=regaout,b=in,sel=aload,out=regain);
+    Register(in=regain,load=aload,out=regaout);
+ 
+
+    //second register
+
+    Mux16(a=regbout,b=in,sel=bload,out=regbin);
+    Register(in=regbin,load=bload,out=regbout);
+
+   //3rd register
+
+    Mux16(a=regcout,b=in,sel=cload,out=regcin);
+    Register(in=regcin,load=cload,out=regcout);
+
+   //4th register
+
+    Mux16(a=regdout,b=in,sel=dload,out=regdin);
+    Register(in=regdin,load=dload,out=regdout);
+
+   //5th register
+
+    Mux16(a=regeout,b=in,sel=eload,out=regein);
+    Register(in=regein,load=eload,out=regeout);
+
+   //6th register
+
+    Mux16(a=regfout,b=in,sel=fload,out=regfin);
+    Register(in=regfin,load=fload,out=regfout);
+
+   //7th register
+
+    Mux16(a=reggout,b=in,sel=gload,out=reggin);
+    Register(in=reggin,load=gload,out=reggout);
+
+   //8th register
+
+    Mux16(a=reghout,b=in,sel=hload,out=reghin);
+    Register(in=reghin,load=hload,out=reghout);
+
+
+
+   //READING THE REGISTER
+
+   Mux8Way16(a=regaout,b=regbout,c=regcout,d=regdout,e=regeout,f=regfout,g=reggout,h=reghout,sel=address,out=out);
+
+
+   
+}

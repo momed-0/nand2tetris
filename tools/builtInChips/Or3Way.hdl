@@ -1,0 +1,17 @@
+//Author:Mohammed N
+//File name: Or3Way.hdl
+
+/**
+*Computes the or of 3 bits
+*
+*/
+
+CHIP Or3Way {
+	IN a,b,c;
+	OUT out;
+
+	PARTS:
+	//logic - a+b+c = out
+	Or(a=a,b=b,out=or1);
+	Or(a=or1,b=c,out=out);
+}

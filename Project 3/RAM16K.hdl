@@ -1,0 +1,30 @@
+//Author: Mohammed N
+// File name: RAM16K.hdl
+
+/**
+ * Memory of 16K registers, each 16 bit-wide. Out holds the value
+ * stored at the memory location specified by address. If load==1, then 
+ * the in value is loaded into the memory location specified by address 
+ * (the loaded value will be emitted to out from the next time step onward).
+ */
+
+CHIP RAM16K {
+    IN in[16], load, address[14];
+    OUT out[16];
+
+    PARTS:
+       //Writing to RAM register using De-multiplexor for load value for each ram
+
+        DMux4Way(in=load,sel=address[12..13],a=aload,b=bload,c=cload,d=dload);
+	
+	RAM4K (in=in,load=aload,address=address[0..11],out=aout);
+	RAM4K (in=in,load=bload,address=address[0..11],out=bout);
+	RAM4K (in=in,load=cload,address=address[0..11],out=cout);
+	RAM4K (in=in,load=dload,address=address[0..11],out=dout);
+	
+	//Reading the RAM
+        //Since we have already know the value of the register in all the RAM part
+        //We only need to output by selecting the RAM part ,ie by using address[12..13]
+
+        Mux4Way16(a=aout,b=bout,c=cout,d=dout,sel=address[12..13],out=out);
+}
