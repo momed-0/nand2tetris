@@ -1,7 +1,7 @@
 
 # [Nand to Tetris](https://github.com/momed-0/nand2tetris)
 
-This repository contains my projects and accompanying materials for the Nand2Tetris course. The course offers a hands-on approach to learning digital logic design and computer architecture. Throughout the course, I built a complete computer system from the ground up, starting with basic logic gates and progressing to high-level programming.
+This repository contains my projects and accompanying materials for the Nand2Tetris course. The course offers a hands-on approach to learning digital logic design and computer architecture. Throughout the course, I built a complete 16-bit computer system from the ground up, starting with basic logic gates and progressing to high-level programming.
 
 # [Project 01](https://github.com/momed-0/nand2tetris/tree/main/Project%201) Boolean Logic and Gates
 In this project, I implemented fundamental logic gates, such as AND, OR, and NOT, using the HDL (Hardware Description Language). I also built more complex gates like NAND and XOR using the elementary gates.
