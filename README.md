@@ -1,3 +1,9 @@
 
 # [Nand to Tetris](https://www.coursera.org/learn/build-a-computer/home/welcome)
-The purpose of this course is to build a general-purpose computer that can run any program.
+
+This repository contains the projects and accompanying materials for the Nand2Tetris course, which is a comprehensive project-based introduction to the fundamental principles of digital logic design and computer architecture. The course aims to take you from the basics of boolean algebra and logic gates all the way to building a fully functional computer system.
+
+The projects in this repository follow the Nand2Tetris course structure, which consists of multiple projects, each building upon the previous one, leading to the creation of a complete computer system. Here's a brief description of each project:
+
+# [Project 01](https://www.coursera.org/learn/build-a-computer/home/welcome)
+## Boolean Logic and Gates
