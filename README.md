@@ -16,6 +16,18 @@ In this project, I delved into low-level machine language. I learned to write pr
 # [Project 05](https://github.com/momed-0/nand2tetris/tree/main/Project%205) Computer Architecture
 I designed and implemented a central processing unit (CPU) capable of executing machine language instructions. By connecting the previously constructed components with memory units, I created a functional CPU.
 
+# [Project 06](https://github.com/momed-0/nand2tetris/tree/main/Project%206) Assembler Written Using C++
+
+## Description
+
+The assembler is implemented in C++ and consists of several components that work together to perform the translation process. The main components are:
+
+- **Parser**: This component is responsible for parsing the assembly code and extracting meaningful instructions and symbols.
+- **SymbolTable**: The SymbolTable component manages a symbol table that stores the labels and their corresponding memory addresses.
+- **Main Function**: The main function orchestrates the overall process, including file handling, preprocessing, symbol table generation, and code translation.
+
+
+
 # Executing the Files
 Using the Hardware Simulator and CPU emulator ,you can run the different files and test the Computer.Also you can run the Pong game (assembly file provided in Project 06 ) using the CPU emulator.
 
